@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Personal Disease Assistant is a project for learning Web Development. It's not
+    medical help or medical assistant. Please, don't use it for serious medical reasons. But you can get some news
+    about actual pandemic situation or tip how to prevents.">
+    <meta name="author" content="Cunning Rabbit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Disease Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onresize="checkMenu();"></body>
+
+    <!-- Main Wrapper -->
+    <div class="wrapper">
+
+        <!-- Header is just navigation -->
+        <header class="header">
+            <nav>
+                <ul id="navigation" class="navigation">
+                    <li onclick="showMenu();"><a href="#"><i class="fa fa-bars"></i> Menu</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">How to prevent</a></li>
+                    <li><a href="#">Check Symptoms</a></li>
+                    <li class="push"><a href="#">Contact us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Aside panel -->
+        <aside class="aside">
+            <h2>Symptoms</h2>
+            <div class="grid">
+                <!-- First Row -->
+                <div class="grid">
+                    <div class="grid-box grid-box-small">
+                        <div class="grid-box-icon-small"><i class="fa fa-thermometer-full"></i></div>
+                        <h3>Fever</h3>
+                        <p>If you have temperature over <strong>37.3</strong>, please check your health status very
+                        carefully and try answer to symptoms lower</p>
+                    </div>
+                    <div class="grid-box grid-box-small">
+                        <div class="grid-box-icon-small"><i class="fa fa-head-side-cough"></i></div>
+                        <h3>Coughing</h3>
+                        <p>If you have dry cough, it could be next symptom. With combine fever could be flu or COVID-19</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="grid-box grid-box-small">
+                        <div class="grid-box-icon-small"><i class="fa fa-tired"></i></div>
+                        <h3>Tiredness</h3>
+                        <p>Specially if you are in most cases tired. COVID-19 could have some light whiles when you feel OK
+                        but after few minutes or hours you will feel tiredness again.</p>
+                    </div>
+                    <div class="grid-box grid-box-small">
+                        <div class="grid-box-icon-small"><i class="fa fa-lungs-virus"></i></div>
+                        <h3>Difficulty Breathing</h3>
+                        <p>Be very aware and contact your medical because this could severe case of COVID-19</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Cover -->
+        <section class="cover">
+            <h1><i class="fa fa-heart"></i> Personal Disease Assistant</h1>
+            <div class="cover-news">
+                <i class="fa fa-virus"></i> <strong>COVID-19 Warning</strong>: Please, cover your face, wash your hands
+                and sanitize objects which using more persons in your <i class="fa fa-home"></i> home
+            </div>
+
+            <!-- TODO hr doesn't shows -->
+            <hr>
+            <div><button class="btn btn-cover">Insert vitals</button></div>
+        </section>
+
+        <section class="content">
+            <div class="subtitle"><h2>Prevention</h2></div>
+            <div class="grid">
+                    <!-- First row with preventions -->
+                    <div class="grid">
+
+                        <!-- Washing hands -->
+                        <div class="grid-box">
+                            <div class="grid-box-icon"><i class="fa fa-hands-wash"></i></div>
+                            <h3>Wash your hands</h3>
+                            <p>The first step is enter your vitals daily. Not all vitals are required. You can write only
+                            what you want or need. But remember, while analyzing last available value will be used for analyze.
+                            That means, if you put your height, weight and chest circumference at first day but on 3rd day
+                            you put just new weight, your BMI will be recalculated just by actual weight but height and
+                            chest circumference will be used from first day.</p>
+                        </div>
+
+                        <!-- Cover Your face -->
+                        <div class="grid-box">
+                            <div class="grid-box-icon"><i class="fa fa-head-side-mask"></i></div>
+                            <h3>Cover your face</h3>
+                            <p>The first step is enter your vitals daily. Not all vitals are required. You can write only
+                            what you want or need. But remember, while analyzing last available value will be used for analyze.
+                            That means, if you put your height, weight and chest circumference at first day but on 3rd day
+                            you put just new weight, your BMI will be recalculated just by actual weight but height and
+                            chest circumference will be used from first day.</p>
+                        </div>
+                    </div>
+
+                    <!-- Second row with preventions -->
+                    <div class="grid">
+
+                        <!-- Social Distance -->
+                        <div class="grid-box">
+                            <div class="grid-box-icon"><i class="fa fa-people-arrows"></i></div>
+                            <h3>Social distance</h3>
+                            <p>The first step is enter your vitals daily. Not all vitals are required. You can write only
+                            what you want or need. But remember, while analyzing last available value will be used for analyze.
+                            That means, if you put your height, weight and chest circumference at first day but on 3rd day
+                            you put just new weight, your BMI will be recalculated just by actual weight but height and
+                            chest circumference will be used from first day.</p>
+                        </div>
+
+                        <!-- Sanitize items -->
+                        <div class="grid-box">
+                            <div class="grid-box-icon"><i class="fa fa-spray-can"></i></div>
+                            <h3>Sanitize common items</h3>
+                            <p>The first step is enter your vitals daily. Not all vitals are required. You can write only
+                            what you want or need. But remember, while analyzing last available value will be used for analyze.
+                            That means, if you put your height, weight and chest circumference at first day but on 3rd day
+                            you put just new weight, your BMI will be recalculated just by actual weight but height and
+                            chest circumference will be used from first day.</p>
+                        </div>
+                    
+                    </div>
+                </div>
+        </section>
+
+        <!-- Page footer -->
+        <footer class="footer">
+            <div class="footer">&copy;2020 Page make with <i class="fa fa-heart"></i></div>
+        </footer>
+        
+    </div>
+
+    <!-- Custom Javascript load -->
+    <script src="script.js"></script>
+
+    <!-- Font Awesome including with my personal key -->
+    <script src="https://kit.fontawesome.com/cae0c201d6.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

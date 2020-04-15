@@ -1,0 +1,12 @@
+$main-bg: white;
+$main-fg: black;
+$color1: lime;
+$color2: darkgreen;
+$color3: darkorange;
+$color4: rgba($color: #ccddcc, $alpha: 0.6);
+$color5: red;
+
+@mixin title-colors {
+    color: $main-bg;
+    text-shadow: -2px -2px 0 invert($main-bg), 2px -2px 0 invert($main-bg), -2px 1px 0 invert($main-bg), 2px 2px 0 invert($main-bg);
+}

@@ -1,0 +1,70 @@
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1280px;
+
+$header-height: 40pt;
+$footer-height: 20pt;
+$subtitle-height: 40pt;
+
+@mixin navigation-common {
+    display: flex;
+    padding: 0 8pt;
+    flex-direction: column;
+    background-color: $main-bg;
+    list-style-type: none;
+    min-height: $header-height;
+    line-height: $header-height;
+    
+    li {
+        display: none;
+    }
+
+    li:first-child {
+        display: inline;
+    }
+
+    li:nth-last-child(-n+2)::after {
+        padding: 0 5pt 0 5pt;
+    }
+
+    a {
+        color: $main-fg;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+}
+
+@mixin navigation-tablet {
+    flex-direction: row;
+
+    li:first-child {
+        display: none;
+    }
+
+    li:nth-child(2)::before {
+        content: "";
+        padding: 0;
+    }
+
+    li:last-child::before {
+        content: "";
+    }
+
+    li:before {
+        content: "|";
+        padding: 0 5pt 0 5pt;
+    }
+
+    li {
+        display: inline;
+    }
+
+    .push {
+        /* This margins push class in navigation to the right */
+        margin-left: auto;
+    }
+
+}
