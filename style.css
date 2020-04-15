@@ -37,10 +37,6 @@ h2 {
   text-align: center;
 }
 
-.subtitle {
-  background-color: yellowgreen;
-}
-
 h3 {
   padding: 10pt;
   border-bottom: 1px dashed black;
@@ -51,13 +47,14 @@ p {
 }
 
 hr {
-  max-width: 60%;
-  border: 1px solid black;
+  min-width: 60%;
+  border: 2px solid black;
 }
 
 .cover {
+  padding: 20pt 5pt;
   color: white;
-  min-height: 50vh;
+  min-height: calc(50vh - 40pt);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,7 +107,7 @@ hr {
   text-decoration: underline;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 400px) {
   .navigation {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -150,18 +147,18 @@ hr {
 }
 
 .btn-cover {
-  margin-top: 2rem;
+  margin-top: 2vh;
   padding: 1rem 2rem;
   border: 1px solid black;
   border-radius: 25px;
   font-weight: bold;
   text-transform: uppercase;
-  background-color: lime;
+  background-color: #ffc680;
   color: black;
 }
 
 .btn-cover:hover {
-  background-color: #e6ffe6;
+  background-color: white;
   color: black;
 }
 
@@ -181,6 +178,16 @@ hr {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: content;
+  background-color: darkgreen;
+}
+
+.content h2 {
+  background-color: #00b100;
+}
+
+.content .grid {
+  -ms-grid-columns: (minmax(255pt, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(255pt, 1fr));
 }
 
 .aside {
@@ -190,38 +197,8 @@ hr {
   grid-area: aside;
 }
 
-@media only screen and (min-width: 1280px) {
-  .aside {
-    width: 20vw;
-  }
-  .aside h3 {
-    padding: 2pt;
-  }
-}
-
-.footer {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-  grid-area: footer;
-}
-
-@media only screen and (min-width: 1280px) {
-  .wrapper {
-    -ms-grid-columns: 1fr 2r 1fr;
-        grid-template-columns: 1fr 2r 1fr;
-        grid-template-areas: "header header" "aside  cover" "aside  content" "footer footer";
-  }
-}
-
-.grid {
-  display: -ms-grid;
-  display: grid;
-  min-height: calc(50vh - 20pt - 40pt - 40pt);
-}
-
-.aside .grid {
-  -ms-grid-columns: (minmax(255pt, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(255pt, 1fr));
+.aside h2 {
+  background-color: #ffaf4d;
 }
 
 @media only screen and (min-width: 1280px) {
@@ -231,21 +208,33 @@ hr {
   }
 }
 
-.content .grid {
-  background-color: darkgreen;
-  -ms-grid-columns: (minmax(255pt, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(255pt, 1fr));
+@media only screen and (min-width: 1280px) {
+  .aside {
+    width: 20vw;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .wrapper {
+        grid-template-areas: "header header" "aside  cover" "aside  content" "footer footer";
+  }
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  min-height: calc(50vh - 20pt - 40pt);
 }
 
 .footer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: footer;
   background-color: white;
   width: 100%;
   line-height: 20pt;
   text-align: right;
   height: 20pt;
-}
-
-div.footer {
   padding-right: 20pt;
 }
 
@@ -261,8 +250,8 @@ div.footer {
 }
 
 .grid-box:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
   background-color: white;
 }
 
@@ -276,10 +265,8 @@ div.footer {
 
 .grid-box-icon {
   font-size: 60pt;
-  padding-bottom: 14px;
 }
 
 .grid-box-icon-small {
   font-size: 40pt;
-  padding-bottom: 14px;
 }

@@ -1,8 +1,8 @@
 $main-bg: white;
 $main-fg: black;
-$color1: lime;
 $color2: darkgreen;
 $color3: darkorange;
+$color1: lighten($color3, 25%);
 $color4: rgba($color: #ccddcc, $alpha: 0.6);
 $color5: red;
 
