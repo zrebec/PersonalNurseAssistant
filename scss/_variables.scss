@@ -1,0 +1,27 @@
+// Normalize settings
+$line-height: 1.5;
+
+// Typography
+$font-size: 10pt;
+
+
+// Colors
+$primary: white;
+$secondary: black;
+$color2: darkgreen;
+$color3: darkorange;
+$color1: rgb(24, 24, 43);
+$color4: rgba($color: #ccddcc, $alpha: 0.6);
+$color5: red;
+
+$image-bg:
+    'https://images.pexels.com/photos/1438489/pexels-photo-1438489.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+
+// Breakpoints for mobile, tablet and desktop version
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1280px;
+
+// Layout dimensions
+$header-height: 70px;
+$footer-height: 40pt;
+$subtitle-height: #{$line-height * 25}pt;

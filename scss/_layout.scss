@@ -1,70 +1,116 @@
-$breakpoint-tablet: 400px;
-$breakpoint-desktop: 1280px;
-
-$header-height: 40pt;
-$footer-height: 20pt;
-$subtitle-height: 40pt;
-
+//TODO This should be more elegant than very large mixin
 @mixin navigation-common {
-    display: flex;
     padding: 0 8pt;
+    display: flex;
+    align-items: center;
     flex-direction: column;
-    background-color: $main-bg;
-    list-style-type: none;
-    min-height: $header-height;
-    line-height: $header-height;
     
     li {
         display: none;
+        
+        // anchors in navigation
+        a {
+            color: $primary;
+            text-decoration: none;
+        }
     }
-
-    li:first-child {
-        display: inline;
-    }
-
-    li:nth-last-child(-n+2)::after {
-        padding: 0 5pt 0 5pt;
-    }
-
-    a {
-        color: $main-fg;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
 }
 
+//TODO This should be more elegant than very large mixin
 @mixin navigation-tablet {
     flex-direction: row;
-
-    li:first-child {
-        display: none;
-    }
-
-    li:nth-child(2)::before {
-        content: "";
-        padding: 0;
-    }
-
-    li:last-child::before {
-        content: "";
-    }
-
-    li:before {
-        content: "|";
-        padding: 0 5pt 0 5pt;
-    }
-
+        
     li {
-        display: inline;
+        display: inline-block;
+        margin: 0 5pt;
+        padding: 5pt;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 1em;
+        border: 2px solid $color1; 
+
+        &:hover {
+            border: 2px solid $primary;
+        }
+    }
+}
+
+// TODO If i have 768 or less pixels and resizing, menu is not showing correct
+header {
+    grid-area: header;
+    height: $header-height;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-color: $color1;
+    align-items: center;
+    color: $primary;
+    padding-left: 20pt;
+    
+    nav {
+        ul {
+            list-style-type: none;
+            @include navigation-common;
+
+            @include mq($breakpoint-tablet) {
+                @include navigation-tablet;
+            }
+        }
+
+        @include mq($breakpoint-tablet) { 
+            .menu-button {
+                display: none;
+            }
+        }
     }
 
-    .push {
-        /* This margins push class in navigation to the right */
-        margin-left: auto;
+    & a {
+        color: $primary;
+        text-decoration: none;
     }
+}
 
+footer {
+    grid-area: footer;
+    background-color: burlywood;
+    height: $footer-height;
+    line-height: $footer-height;
+    text-align: right;
+    padding-right: 20pt;
+}
+
+// Layout for mobile version
+#wrapper {
+    min-height: 100vh;
+    display: grid;
+    gap: 0;
+    grid-template-areas: 
+        "header"
+        "cover"
+        "aside"
+        "content"
+        "footer";
+
+    // Layout for desktop version
+    @include mq($breakpoint-desktop) {
+        //grid-template-columns: minmax(250px, 20vw) 3fr;
+        grid-template-areas:
+        "header header"
+        "aside  cover"
+        "aside  content"
+        "footer footer"
+    }
+}
+
+
+.cover {
+    background: url($image-bg) no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+    hr {
+        min-width: 60%;
+        border: 2px solid $secondary;
+    }
 }

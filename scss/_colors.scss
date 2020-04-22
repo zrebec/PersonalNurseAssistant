@@ -1,12 +1,13 @@
-$main-bg: white;
-$main-fg: black;
-$color2: darkgreen;
-$color3: darkorange;
-$color1: lighten($color3, 25%);
-$color4: rgba($color: #ccddcc, $alpha: 0.6);
-$color5: red;
+@function textOverline($color) {
+    @return -2px -2px 0 $color, 2px -2px 0 $color, -2px 1px 0 $color, 2px 2px 0 $color;
+}
 
 @mixin title-colors {
-    color: $main-bg;
-    text-shadow: -2px -2px 0 invert($main-bg), 2px -2px 0 invert($main-bg), -2px 1px 0 invert($main-bg), 2px 2px 0 invert($main-bg);
+    color: $secondary;
+}
+
+@mixin mq($size) {
+    @media only screen and (min-width: $size) {
+        @content;
+    }
 }

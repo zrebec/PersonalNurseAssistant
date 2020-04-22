@@ -1,16 +1,56 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Righteous&display=swap');
 
-body {
-    font-family: 'Open Sans', cursive;
-    font-size: 12pt;
-}
-
-p {
-    text-align: justify;
-}
-
 @mixin title-typography {
     font-family: Righteous, monospace;
     font-weight: 400;
     text-transform: uppercase;
+}
+
+html {
+    font-size: $font-size;
+}
+
+@include mq($breakpoint-tablet) {
+    html {
+        font-size: $font-size * 1.1;
+    }
+}
+
+@include mq(1024px) {
+    html {
+        font-size: $font-size * 1.2;
+    }
+}
+
+
+
+body {
+    background-color: aqua;
+    font-family: 'Open Sans', cursive;
+}
+
+h1 {
+    @include title-typography;
+    @include title-colors;
+  }
+  
+h2 {
+    height: $subtitle-height;
+    line-height: $subtitle-height;
+    text-align: center;
+    background-color: lighten($color: $color2, $amount: 15%);
+}
+
+h3 {
+    padding: 10pt;
+    border-bottom: 1px dashed black;
+}
+
+p {
+    padding: 10pt;
+    text-align: justify;
+}
+
+.fa-heart {
+    color: $color5;
 }
